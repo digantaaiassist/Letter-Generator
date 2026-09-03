@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bank Letter Generator</title>
+
+    <meta name="theme-color" content="#0f4c81">
+
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Bank Letter Generator</h1>
+        <p>Generate professional letters quickly</p>
+    </header>
+
+    <main>
+
+        <section class="card">
+
+            <label for="letterType">Select Letter Type</label>
+
+            <select id="letterType">
+                <option value="">-- Select Letter --</option>
+                <option value="document">Document Submission Reminder</option>
+                <option value="renewal">Loan Renewal Reminder</option>
+                <option value="irregularity">Account Irregularity Letter</option>
+            </select>
+
+        </section>
+
+
+        <section class="card">
+
+            <h2>Customer Details</h2>
+
+            <div class="form-group">
+                <label>Customer / Firm Name</label>
+                <input type="text" id="customerName" placeholder="Enter customer name">
+            </div>
+
+            <div class="form-group">
+                <label>Address</label>
+                <textarea id="address" placeholder="Enter address"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Account Number</label>
+                <input type="text" id="accountNumber" placeholder="Enter account number">
+            </div>
+
+            <div class="form-group">
+                <label>Facility Type</label>
+                <input type="text" id="facilityType" placeholder="Example: Cash Credit">
+            </div>
+
+            <div class="form-group">
+                <label>Additional Remarks / Issue</label>
+                <textarea id="issue" placeholder="Enter specific issue"></textarea>
+            </div>
+
+            <button onclick="generateLetter()">
+                Generate Letter
+            </button>
+
+        </section>
+
+
+        <section class="card preview-section">
+
+            <h2>Letter Preview</h2>
+
+            <div id="letterPreview" class="letter-preview">
+
+                <p class="placeholder-text">
+                    Your generated letter will appear here.
+                </p>
+
+            </div>
+
+            <button class="secondary-btn" onclick="copyLetter()">
+                Copy Letter
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
