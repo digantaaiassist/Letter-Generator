@@ -178,7 +178,120 @@ button {
         margin: 25mm 20mm 25mm 20mm;
     }
 }
+/* PDF Button */
 .pdf-btn {
     margin-top: 10px;
     background: #1a7f37;
+}
+
+
+/* STANDARD LETTER FORMAT */
+
+.letter-document {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 11pt;
+    line-height: 1.35;
+    color: black;
+}
+
+.letter-header {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.letter-header h2 {
+    margin: 0 0 3px 0;
+    font-size: 14pt;
+}
+
+.letter-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.letter-address {
+    margin-bottom: 15px;
+}
+
+.letter-subject {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 15px 0;
+}
+
+.letter-body {
+    text-align: justify;
+}
+
+.letter-body p {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.signature {
+    margin-top: 20px;
+}
+
+
+/* PRINT / PDF SETTINGS */
+
+@media print {
+
+    @page {
+        size: A4;
+        margin: 15mm 18mm 15mm 18mm;
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        background: white;
+    }
+
+    header,
+    main > .card:not(.preview-section),
+    .secondary-btn,
+    .pdf-btn,
+    .preview-section h2 {
+        display: none !important;
+    }
+
+    main {
+        margin: 0;
+        padding: 0;
+        max-width: none;
+    }
+
+    .preview-section {
+        padding: 0;
+        margin: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+    .letter-preview {
+        border: none;
+        padding: 0;
+        margin: 0;
+        min-height: auto;
+    }
+
+    .letter-document {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 11pt;
+        line-height: 1.3;
+    }
+
+    .letter-body p {
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+
+    .signature {
+        margin-top: 20px;
+    }
 }
