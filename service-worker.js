@@ -1,4 +1,4 @@
-const CACHE_NAME = "bank-letter-generator-v3";
+const CACHE_NAME = "bank-letter-generator-v5";
 
 const FILES_TO_CACHE = [
     "./",
