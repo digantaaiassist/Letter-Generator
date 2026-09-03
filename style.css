@@ -1,297 +1,320 @@
 * {
-    box-sizing: border-box;
-}
+  box-sizing: border-box;
+  }
+
+/* ===============================
+GENERAL APP DESIGN
+================================ */
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f3f5f7;
-    color: #222;
+margin: 0;
+font-family: Arial, sans-serif;
+background: #f3f5f7;
+color: #222;
 }
 
 header {
-    background: #0f4c81;
-    color: white;
-    padding: 20px;
-    text-align: center;
+background: #0f4c81;
+color: white;
+padding: 20px;
+text-align: center;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 24px;
+margin: 0;
+font-size: 24px;
 }
 
 header p {
-    margin-top: 6px;
-    font-size: 14px;
-    opacity: 0.9;
+margin: 6px 0 0;
+font-size: 14px;
+opacity: 0.9;
 }
 
 main {
-    max-width: 800px;
-    margin: auto;
-    padding: 15px;
+max-width: 800px;
+margin: auto;
+padding: 15px;
 }
 
+/* ===============================
+CARDS
+================================ */
+
 .card {
-    background: white;
-    padding: 20px;
-    margin-bottom: 18px;
-    border-radius: 12px;
+background: white;
+padding: 20px;
+margin-bottom: 18px;
+border-radius: 12px;
 }
 
 h2 {
-    margin-top: 0;
-    font-size: 20px;
+margin-top: 0;
+font-size: 20px;
 }
 
+/* ===============================
+FORM ELEMENTS
+================================ */
+
 .form-group {
-    margin-bottom: 15px;
+margin-bottom: 15px;
 }
 
 label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 6px;
+display: block;
+font-weight: bold;
+margin-bottom: 6px;
 }
 
 input,
 textarea,
 select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    font-size: 16px;
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 7px;
+font-size: 16px;
+font-family: Arial, sans-serif;
 }
 
 textarea {
-    min-height: 80px;
+min-height: 80px;
+resize: vertical;
 }
 
+/* ===============================
+BUTTONS
+================================ */
+
 button {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 8px;
-    background: #0f4c81;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+width: 100%;
+padding: 14px;
+border: none;
+border-radius: 8px;
+background: #0f4c81;
+color: white;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+margin-top: 5px;
+}
+
+button:hover {
+opacity: 0.9;
 }
 
 .secondary-btn {
-    margin-top: 15px;
-    background: #555;
+margin-top: 15px;
+background: #555;
 }
 
+.pdf-btn {
+margin-top: 10px;
+background: #1a7f37;
+}
+
+/* ===============================
+LETTER PREVIEW ON SCREEN
+================================ */
+
 .letter-preview {
-    border: 1px solid #ddd;
-    padding: 20px;
-    min-height: 300px;
-    background: #fff;
-    line-height: 1.7;
-    white-space: pre-line;
+border: 1px solid #ddd;
+padding: 25px;
+min-height: 300px;
+background: white;
+line-height: 1.5;
+white-space: normal;
 }
 
 .placeholder-text {
-    color: #777;
-}
-.pdf-btn {
-    margin-top: 10px;
-    background: #1a7f37;
+color: #777;
 }
 
-/* Standard Letter Format */
+/* ===============================
+STANDARD BANK LETTER FORMAT
+================================ */
 
 .letter-document {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 12pt;
-    line-height: 1.5;
-    color: black;
+font-family: "Times New Roman", Times, serif;
+font-size: 11pt;
+line-height: 1.35;
+color: black;
 }
 
 .letter-header {
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 25px;
+text-align: center;
+font-weight: bold;
+margin-bottom: 15px;
 }
 
 .letter-header h2 {
-    margin-bottom: 5px;
+margin: 0 0 3px 0;
+font-size: 14pt;
 }
 
 .letter-meta {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 25px;
+display: flex;
+justify-content: space-between;
+margin-bottom: 15px;
 }
 
 .letter-address {
-    margin-bottom: 25px;
+margin-bottom: 15px;
 }
 
 .letter-subject {
-    text-align: center;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin: 25px 0;
+text-align: center;
+font-weight: bold;
+text-transform: uppercase;
+margin: 15px 0;
 }
 
 .letter-body {
-    text-align: justify;
-}
-
-.signature {
-    margin-top: 40px;
-}
-
-@media print {
-
-    body {
-        background: white;
-    }
-
-    header,
-    .card:not(.preview-section),
-    .secondary-btn,
-    .pdf-btn,
-    .preview-section h2 {
-        display: none !important;
-    }
-
-    .preview-section {
-        padding: 0;
-        margin: 0;
-        border: none;
-    }
-
-    .letter-preview {
-        border: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    @page {
-        size: A4;
-        margin: 25mm 20mm 25mm 20mm;
-    }
-}
-/* PDF Button */
-.pdf-btn {
-    margin-top: 10px;
-    background: #1a7f37;
-}
-
-
-/* STANDARD LETTER FORMAT */
-
-.letter-document {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 11pt;
-    line-height: 1.35;
-    color: black;
-}
-
-.letter-header {
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.letter-header h2 {
-    margin: 0 0 3px 0;
-    font-size: 14pt;
-}
-
-.letter-meta {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-}
-
-.letter-address {
-    margin-bottom: 15px;
-}
-
-.letter-subject {
-    text-align: center;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin: 15px 0;
-}
-
-.letter-body {
-    text-align: justify;
+text-align: justify;
 }
 
 .letter-body p {
-    margin-top: 0;
-    margin-bottom: 8px;
+margin: 0 0 8px 0;
 }
 
 .signature {
-    margin-top: 20px;
+margin-top: 20px;
 }
 
-
-/* PRINT / PDF SETTINGS */
+/* =========================================
+A4 PDF / PRINT SETTINGS
+========================================= */
 
 @media print {
 
-    @page {
-        size: A4;
-        margin: 15mm 18mm 15mm 18mm;
-    }
+```
+/* Set A4 paper */
+@page {
+    size: A4 portrait;
+    margin: 10mm 15mm 10mm 15mm;
+}
 
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-        background: white;
-    }
+/* Reset page */
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+}
 
-    header,
-    main > .card:not(.preview-section),
-    .secondary-btn,
-    .pdf-btn,
-    .preview-section h2 {
-        display: none !important;
-    }
+/* Hide everything */
+body * {
+    visibility: hidden;
+}
 
-    main {
-        margin: 0;
-        padding: 0;
-        max-width: none;
-    }
+/* Show only generated letter */
+#letterPreview,
+#letterPreview * {
+    visibility: visible;
+}
 
-    .preview-section {
-        padding: 0;
-        margin: 0;
-        border: none;
-        box-shadow: none;
-    }
+/* Position letter correctly */
+#letterPreview {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
 
-    .letter-preview {
-        border: none;
-        padding: 0;
-        margin: 0;
-        min-height: auto;
-    }
+    width: 100% !important;
 
-    .letter-document {
-        font-family: "Times New Roman", Times, serif;
-        font-size: 11pt;
-        line-height: 1.3;
-    }
+    margin: 0 !important;
+    padding: 0 !important;
 
-    .letter-body p {
-        margin-top: 0;
-        margin-bottom: 8px;
-    }
+    border: none !important;
 
-    .signature {
-        margin-top: 20px;
-    }
+    min-height: 0 !important;
+}
+
+/* Compact letter for A4 */
+.letter-document {
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: 10.5pt !important;
+    line-height: 1.2 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Compact header */
+.letter-header {
+    margin: 0 0 8px 0 !important;
+}
+
+.letter-header h2 {
+    margin: 0 0 2px 0 !important;
+    font-size: 13pt !important;
+}
+
+/* Reference and Date */
+.letter-meta {
+    margin: 8px 0 !important;
+}
+
+/* Address */
+.letter-address {
+    margin-bottom: 8px !important;
+}
+
+/* Subject */
+.letter-subject {
+    margin: 10px 0 !important;
+}
+
+/* Paragraph spacing */
+.letter-body p {
+    margin: 0 0 6px 0 !important;
+}
+
+/* Signature */
+.signature {
+    margin-top: 12px !important;
+}
+```
+
+}
+
+/* ===============================
+MOBILE RESPONSIVENESS
+================================ */
+
+@media screen and (max-width: 600px) {
+
+```
+header {
+    padding: 15px;
+}
+
+header h1 {
+    font-size: 20px;
+}
+
+main {
+    padding: 10px;
+}
+
+.card {
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.letter-preview {
+    padding: 15px;
+    overflow-x: auto;
+}
+
+.letter-document {
+    font-size: 10.5pt;
+}
+
+.letter-meta {
+    flex-direction: column;
+    gap: 8px;
+}
+```
+
 }
