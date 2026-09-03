@@ -8,125 +8,143 @@ function generateLetter() {
     const facilityType = document.getElementById("facilityType").value;
     const issue = document.getElementById("issue").value;
 
+    const today = new Date().toLocaleDateString("en-GB");
 
-    let letter = "";
+    let subject = "";
+    let body = "";
 
 
     if (letterType === "document") {
 
-        letter = `
-To,
+        subject = "SUBMISSION OF PENDING DOCUMENTS";
 
-${customerName}
-${address}
+        body = `
+            <p>We refer to the credit facilities availed by you from our branch under Account No. <strong>${accountNumber}</strong>.</p>
 
+            <p>It is observed that the following documents/information are pending from your end:</p>
 
-Dear Sir/Madam,
+            <p><strong>${issue}</strong></p>
 
-SUB: Submission of pending documents
+            <p>You are requested to submit the above documents/information at the earliest for regularisation of our records.</p>
 
-We refer to the credit facilities availed by you from our branch under Account No. ${accountNumber}.
-
-It is observed that the following documents/information are pending from your end:
-
-${issue}
-
-You are requested to submit the above documents/information at the earliest for regularisation of our records.
-
-Kindly treat the matter as urgent.
-
-Yours faithfully,
-
-Branch Manager
-`;
-
+            <p>Kindly treat the matter as urgent.</p>
+        `;
     }
 
 
     else if (letterType === "renewal") {
 
-        letter = `
-To,
+        subject = "RENEWAL OF CREDIT FACILITIES";
 
-${customerName}
-${address}
+        body = `
+            <p>We refer to the ${facilityType} facility maintained by you with our branch under Account No. <strong>${accountNumber}</strong>.</p>
 
+            <p>The renewal of the existing credit facilities is due.</p>
 
-Dear Sir/Madam,
+            <p>You are requested to submit the required financial statements and other documents for processing the renewal of the credit facilities.</p>
 
-SUB: Renewal of Credit Facilities
+            <p>${issue}</p>
 
-We refer to the ${facilityType} facility maintained by you with our branch under Account No. ${accountNumber}.
-
-The renewal of the existing credit facilities is due.
-
-You are requested to submit the required financial statements and other documents for processing the renewal of the credit facilities.
-
-${issue}
-
-Kindly submit the required documents at the earliest.
-
-Yours faithfully,
-
-Branch Manager
-`;
-
+            <p>Kindly submit the required documents at the earliest.</p>
+        `;
     }
 
 
     else if (letterType === "irregularity") {
 
-        letter = `
-To,
+        subject = "IRREGULARITY IN CREDIT ACCOUNT";
 
-${customerName}
-${address}
+        body = `
+            <p>We refer to your ${facilityType} account bearing Account No. <strong>${accountNumber}</strong> maintained with our branch.</p>
 
+            <p>It has been observed that the account is irregular due to the following reason:</p>
 
-Dear Sir/Madam,
+            <p><strong>${issue}</strong></p>
 
-SUB: Irregularity in Credit Account
+            <p>You are requested to regularise the account immediately and ensure that the account is conducted as per the terms and conditions of sanction.</p>
 
-We refer to your ${facilityType} account bearing Account No. ${accountNumber} maintained with our branch.
-
-It has been observed that the account is irregular due to the following reason:
-
-${issue}
-
-You are requested to regularise the account immediately and ensure that the account is conducted as per the terms and conditions of sanction.
-
-Kindly treat this communication as urgent.
-
-Yours faithfully,
-
-Branch Manager
-`;
-
+            <p>Kindly treat this communication as urgent.</p>
+        `;
     }
 
 
     else {
 
         alert("Please select a letter type.");
-
         return;
     }
 
 
-    document.getElementById("letterPreview").innerText = letter;
-}
+    const letter = `
+
+        <div class="letter-document">
+
+            <div class="letter-header">
+
+                <h2>STATE BANK OF INDIA</h2>
+
+                <div>JORHAT BRANCH</div>
+
+            </div>
 
 
-function copyLetter() {
+            <div class="letter-meta">
 
-    const letter = document.getElementById("letterPreview").innerText;
+                <div>
+                    Ref No: ____________
+                </div>
 
-    if (!letter || letter.includes("Your generated letter")) {
-        alert("Please generate a letter first.");
-        return;
-    }
+                <div>
+                    Date: ${today}
+                </div>
 
-    navigator.clipboard.writeText(letter);
+            </div>
 
-    alert("Letter copied successfully!");
+
+            <div class="letter-address">
+
+                <strong>To</strong><br><br>
+
+                ${customerName}<br>
+
+                ${address.replace(/\n/g, "<br>")}
+
+            </div>
+
+
+            <p>Dear Sir/Madam,</p>
+
+
+            <div class="letter-subject">
+
+                ${subject}
+
+            </div>
+
+
+            <div class="letter-body">
+
+                ${body}
+
+            </div>
+
+
+            <div class="signature">
+
+                Yours faithfully,<br><br><br>
+
+                <strong>Branch Manager</strong><br>
+
+                State Bank of India<br>
+
+                Jorhat Branch
+
+            </div>
+
+        </div>
+    `;
+
+
+    document.getElementById("letterPreview").innerHTML = letter;
+
 }
