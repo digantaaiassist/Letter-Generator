@@ -178,3 +178,7 @@ button {
         margin: 25mm 20mm 25mm 20mm;
     }
 }
+.pdf-btn {
+    margin-top: 10px;
+    background: #1a7f37;
+}
