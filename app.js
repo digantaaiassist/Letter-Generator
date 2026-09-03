@@ -131,7 +131,7 @@ function generateLetter() {
 
             <div class="signature">
 
-                Yours faithfully,<br><br><br>
+                Yours faithfully,<br><br>
 
                 <strong>Branch Manager</strong><br>
 
