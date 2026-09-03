@@ -98,3 +98,83 @@ button {
 .placeholder-text {
     color: #777;
 }
+.pdf-btn {
+    margin-top: 10px;
+    background: #1a7f37;
+}
+
+/* Standard Letter Format */
+
+.letter-document {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: black;
+}
+
+.letter-header {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.letter-header h2 {
+    margin-bottom: 5px;
+}
+
+.letter-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.letter-address {
+    margin-bottom: 25px;
+}
+
+.letter-subject {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 25px 0;
+}
+
+.letter-body {
+    text-align: justify;
+}
+
+.signature {
+    margin-top: 40px;
+}
+
+@media print {
+
+    body {
+        background: white;
+    }
+
+    header,
+    .card:not(.preview-section),
+    .secondary-btn,
+    .pdf-btn,
+    .preview-section h2 {
+        display: none !important;
+    }
+
+    .preview-section {
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
+
+    .letter-preview {
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    @page {
+        size: A4;
+        margin: 25mm 20mm 25mm 20mm;
+    }
+}
