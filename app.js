@@ -148,3 +148,14 @@ function generateLetter() {
     document.getElementById("letterPreview").innerHTML = letter;
 
 }
+function printLetter() {
+
+    const letterContent = document.getElementById("letterPreview").innerHTML;
+
+    if (!letterContent || letterContent.includes("Your generated letter")) {
+        alert("Please generate a letter first.");
+        return;
+    }
+
+    window.print();
+}
