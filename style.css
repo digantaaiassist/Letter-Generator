@@ -183,12 +183,13 @@ A4 PRINT / PDF FORMAT
 @media print {
 
 ```
+/* Standard A4 paper with professional margins */
 @page {
-    size: A4;
-    margin: 18mm 18mm 18mm 18mm;
+    size: A4 portrait;
+    margin: 25mm 25mm 25mm 25mm;
 }
 
-/* Hide entire app */
+/* Hide everything except the letter */
 header,
 main > .card:not(.preview-section),
 .secondary-btn,
@@ -197,7 +198,8 @@ main > .card:not(.preview-section),
     display: none !important;
 }
 
-/* Remove webpage layout restrictions */
+/* Clean page */
+html,
 body {
     background: white !important;
     margin: 0 !important;
@@ -211,7 +213,7 @@ main {
     padding: 0 !important;
 }
 
-/* Remove card styling */
+/* Remove preview card styling */
 .preview-section {
     width: 100% !important;
     margin: 0 !important;
@@ -222,7 +224,6 @@ main {
     background: white !important;
 }
 
-/* Letter fills printable width */
 .letter-preview {
     width: 100% !important;
     margin: 0 !important;
@@ -232,39 +233,57 @@ main {
     background: white !important;
 }
 
-/* Actual document */
+/* STANDARD BANK LETTER */
 .letter-document {
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
 
     font-family: "Times New Roman", Times, serif !important;
-    font-size: 11pt !important;
-    line-height: 1.35 !important;
+    font-size: 12pt !important;
+    line-height: 1.4 !important;
+    color: black !important;
 }
 
+/* Header */
 .letter-header {
-    margin-bottom: 12px !important;
+    margin-bottom: 18px !important;
 }
 
+.letter-header h2 {
+    font-size: 14pt !important;
+    margin-bottom: 4px !important;
+}
+
+/* Reference and Date */
 .letter-meta {
-    margin-bottom: 12px !important;
+    margin-bottom: 18px !important;
 }
 
+/* Customer Address */
 .letter-address {
-    margin-bottom: 12px !important;
+    margin-bottom: 18px !important;
 }
 
+/* Subject */
 .letter-subject {
-    margin: 12px 0 !important;
+    margin: 18px 0 !important;
+    font-weight: bold !important;
+}
+
+/* Letter Body */
+.letter-body {
+    text-align: justify !important;
 }
 
 .letter-body p {
-    margin: 0 0 8px 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 12px !important;
 }
 
+/* Signature */
 .signature {
-    margin-top: 18px !important;
+    margin-top: 25px !important;
 }
 ```
 
